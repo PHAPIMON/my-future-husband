@@ -46,6 +46,27 @@
     color: #ff99cc;
   }
 
+  /* สำหรับมือถือและแท็บเล็ตที่ความกว้างต่ำกว่า 768px */
+  @media (max-width: 768px) {
+    .popup-container {
+      width: 100vw;  /* หรือขนาดที่เหมาะสม */
+      height: auto;  /* ปรับความสูงตามเนื้อหา */
+      overflow-x: hidden;
+    }
+    .music-card {
+      width: 80vw; /* ปรับขนาดการ์ดเพลงให้พอดีกับหน้าจอ */
+    }
+  }
+
+  .slider-container {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .music-card {
+    display: inline-block;
+    /* กำหนดขนาดให้เหมาะสมกับหน้าจอ */
+  }
+
 
   /* กล่องข้อความ Music Streaming */
   .info-box-music-slider {
