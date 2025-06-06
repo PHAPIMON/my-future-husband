@@ -46,18 +46,6 @@
     color: #ff99cc;
   }
 
-  /* สำหรับมือถือและแท็บเล็ตที่ความกว้างต่ำกว่า 768px */
-  @media (max-width: 768px) {
-    .popup-container {
-      width: 100vw;  /* หรือขนาดที่เหมาะสม */
-      height: auto;  /* ปรับความสูงตามเนื้อหา */
-      overflow-x: hidden;
-    }
-    .music-card {
-      width: 80vw; /* ปรับขนาดการ์ดเพลงให้พอดีกับหน้าจอ */
-    }
-  }
-
   .slider-container {
     overflow-x: auto;
     white-space: nowrap;
@@ -76,10 +64,19 @@
     overflow: hidden;
     color: black;
 
-    width: 100vw;       /* เต็มความกว้างหน้าจอ */
+    width: 100%;       /* เต็มความกว้างหน้าจอ */
     max-width: 1900px;  /* ไม่เกิน 1200px */
     height: 300px;      /* ฟิกความสูงไม่ให้ขยาย */
     margin: 0 auto;     /* จัดให้อยู่กึ่งกลางจอ */
+  }
+
+  /* สำหรับมือถือ */
+  @media (max-width: 768px) {
+    .info-box-music-slider {
+      max-width: 100%;
+      height: auto; /* ให้ปรับความสูงตามเนื้อหา */
+      padding: 20px;
+    }
   }
 
   .info-slider-container {
