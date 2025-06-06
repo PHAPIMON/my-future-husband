@@ -1,0 +1,254 @@
+/* ตั้งค่าเบื้องต้น */
+  body {
+    font-family: 'Outfit', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: white;
+  }
+
+  /* หัวข้อ */
+  h1, h2 {
+    color: white;
+  }
+
+  /* ลิงก์ */
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  /* เมนูด้านบน */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #2c2c2c;
+    border-bottom: 1px solid #444;
+  }
+
+  .navbar h1 {
+    font-size: 1.8rem;
+    color: #ff99cc;
+  }
+
+  .navbar nav ul {
+    display: flex;
+    list-style-type: none;
+  }
+
+  .navbar nav ul li {
+    margin-left: 20px;
+  }
+
+  .navbar nav ul li a:hover {
+    color: #ff99cc;
+  }
+
+
+  /* กล่องข้อความ Music Streaming */
+  .info-box-music-slider {
+    position: relative;
+    background-color: white;
+    padding: 60px 0;
+    overflow: hidden;
+    color: black;
+
+    width: 100vw;       /* เต็มความกว้างหน้าจอ */
+    max-width: 1900px;  /* ไม่เกิน 1200px */
+    height: 300px;      /* ฟิกความสูงไม่ให้ขยาย */
+    margin: 0 auto;     /* จัดให้อยู่กึ่งกลางจอ */
+  }
+
+  .info-slider-container {
+    display: flex;
+    width: 400%; /* ถ้ามี 4 สไลด์ */
+    transition: transform 0.5s ease-in-out;
+    min-height: 300px; /* หรือปรับตามต้องการ */
+  }
+
+  .slide {
+    flex: 1 0 100%;
+    box-sizing: border-box;
+    padding: 20px;
+  }
+
+  .slide h2 {
+    
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: black;
+  }
+
+  .slide p {
+    font-size: 18px;
+    color: black;
+  }
+
+  .slide img {
+    margin-left: -20px;  /* ขยับไปทางซ้าย */
+    margin-top: -80px;   /* ขยับขึ้น */
+  }
+
+  .dots {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+  }
+
+  .dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 4px;
+    background-color: #ccc;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .dot.active {
+    background-color: #ff99cc;
+  }
+
+ 
+  #music {
+    padding: 40px 20px;
+    background-color: #1f1f1f;
+  }
+  
+  .music-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .music-scroll {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 1rem;
+    padding: 1rem 0;
+    -webkit-overflow-scrolling: touch; /* ให้สามารถเลื่อนได้บนมือถือ */
+    
+    /* ซ่อน scrollbar */
+    scrollbar-width: none;           /* Firefox */
+    -ms-overflow-style: none;        /* IE/Edge */
+  }
+
+  .music-scroll::-webkit-scrollbar {
+    display: none;                   /* Chrome/Safari */
+  }
+
+  .music-img-wrapper {
+    flex: 0 0 auto;
+    width: 220px;
+    position: relative;
+    flex-shrink: 0; /* ป้องกันการย่อของภาพ */
+  }
+
+  .music-img-wrapper img {
+    width: 100%;
+    height: auto; /* รักษาอัตราส่วนภาพ */
+    border-radius: 10px;
+  }
+
+  .arrow {
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    color: #ff99cc;
+    cursor: pointer;
+    padding: 0 1rem;
+    z-index: 2;
+  }
+
+/* รูปภาพเพลง */
+ .music-img-wrapper {
+    max-width:220px;
+    height: 300px; /* ขนาดเดียวกับการ์ด */
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); /* เพิ่มเงาให้รูป */
+    cursor: pointer; /* เปลี่ยนเคอร์เซอร์ให้เป็นมือ */
+  }
+  
+  /* รูปภาพภายใน */
+  .music-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ขยายภาพให้เต็มกรอบ */
+    border-radius: 15px;
+    transition: filter 0.3s ease; /* เพิ่ม transition สำหรับ filter */
+  }
+  
+  /* เอฟเฟกต์เมื่อ hover */
+  .music-img-wrapper:hover img {
+    filter: brightness(0.7); /* ทำให้ภาพมืดลง */
+  }
+
+  /* เอฟเฟกต์เมื่อ hover ทั้งเบลอและดำนิดนึง */
+  .music-img-wrapper:hover img {
+    filter: blur(3px) brightness(0.7);
+    transition: 0.3s ease;
+  }
+
+  /* Hover effect สำหรับการ์ด */
+  .music-img-wrapper:hover {
+    transform: scale(1.07);
+    transition: 0.3s ease;
+  }
+
+  /* ข้อความบนรูป */
+  .overlay1 {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 15px; /* เพิ่มระยะห่างจากขอบ */
+    background: none; /* เอาพื้นหลังออก */
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    opacity: 1; /* ให้ข้อความแสดงตลอดเวลา */
+    text-align: left; /* จัดข้อความให้ชิดซ้าย */
+ }
+
+/* ข้อความ See More */
+.see-more {
+    padding: 40px 16px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: color 0.3s ease;
+    position: absolute;
+    bottom: -40px;
+    left: -2px;
+  }
+  
+  /* เอฟเฟกต์เมื่อ hover */
+  .see-more:hover {
+    color: #ff66aa;
+  }
+  
+  /* กล่องข้อความ บอกร้าก */
+  .more-info {
+    display: none; /* ซ่อนข้อมูลเพิ่มเติมเริ่มต้น */
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 80px; /* ทำให้แสดงใต้ข้อความ See more */
+    left: 10px;
+    width: 100%;
+    max-width: 200px;
+    box-sizing: border-box;
+  }
+
+  
